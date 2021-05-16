@@ -1,3 +1,7 @@
+import pyyoutube
+from private import __API_KEY
+
+API_KEY = __API_KEY
 
 
 def main() -> None:
