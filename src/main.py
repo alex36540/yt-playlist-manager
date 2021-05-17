@@ -5,8 +5,11 @@ Author: Alexander Lee (https://github.com/alex36540)
 Description: Runs the playlist manager.
 """
 import pyyoutube
+from pyyoutube import Api
+
 from private import *
 import video
+import playlist
 
 api = pyyoutube.Api(api_key=API_KEY)
 
