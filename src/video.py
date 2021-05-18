@@ -6,7 +6,6 @@ Description: Contains representation of a video as well as operations on a playl
              to videos.
 """
 from dataclasses import dataclass
-from typing import List
 
 
 @dataclass(unsafe_hash=True)
@@ -15,12 +14,3 @@ class Video:
     id: str
     title: str
     index: int
-
-
-
-
-
-
-
-
-

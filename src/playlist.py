@@ -1,3 +1,9 @@
+"""
+File: playlist.py
+Author: Alexander Lee (https://github.com/alex36540)
+
+Description: Contains a representation of a playlist.
+"""
 from typing import List
 from video import Video
 import pickle
@@ -20,9 +26,13 @@ class Playlist:
         self.videos = []
         self.size = 0
 
-    def get_videos(self) -> None:
+    def get_videos(self): return self.videos
+
+    def get_name(self): return self.name
+
+    def request_videos(self) -> None:
         """
-        Gets all of the videos from a playlist.
+        Requests all of the videos from a playlist using the API.
 
         :return: None
         """

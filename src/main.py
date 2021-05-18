@@ -4,24 +4,16 @@ Author: Alexander Lee (https://github.com/alex36540)
 
 Description: Runs the playlist manager.
 """
-import pyyoutube
 from pyyoutube import Api
 
 from private import *
-import video
-import playlist
+from playlist import Playlist
 
-api = pyyoutube.Api(api_key=API_KEY)
+api = Api(api_key=API_KEY)
 
 
 def main() -> None:
-    playlist = api.get_playlist_by_id(playlist_id=PLAYLIST_ID).items[0]
-    name = playlist.snippet.title
-
-    videos = video.get_videos(api, PLAYLIST_ID)
-
-    video.write_videos(videos, name)
-    print(video.load_videos(name))
+    playlist = Playlist(api, PLAYLIST_ID)
 
 
 if __name__ == '__main__':
