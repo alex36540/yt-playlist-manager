@@ -5,7 +5,6 @@ Author: Alexander Lee (https://github.com/alex36540)
 Description: Runs the playlist manager.
 """
 from pyyoutube import Api
-
 from private import *
 from playlist import Playlist
 

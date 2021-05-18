@@ -7,6 +7,7 @@ Description: Contains representation of a video as well as operations on a playl
 """
 from dataclasses import dataclass
 
+VID_URL = "https://www.youtube.com/watch?v="
 
 @dataclass(unsafe_hash=True)
 class Video:
