@@ -1,7 +1,3 @@
-# Specific files
-private.py
-videos.json
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -131,3 +127,8 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Other files
+/src/mysite/mysite/secret.py
+/src/private.py
+src/mysite/playlist_manager/migrations/
