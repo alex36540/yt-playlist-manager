@@ -8,7 +8,7 @@ class Playlist(models.Model):
     # this is also where you add methods
 
     def __str__(self):
-        return self.name
+        return self.title
 
 
 class Video(models.Model):
