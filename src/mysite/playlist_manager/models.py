@@ -1,9 +1,10 @@
 from django.db import models
 
+
 class Playlist(models.Model):
     id = models.CharField(max_length=200, primary_key=True)
-    name = models.CharField(max_length=200)
-    # TODO add videos field
+    title = models.CharField(max_length=200)
+    # to get all videos, method is <Playlist>.video_set.all(), or video_set.create( VIDEO FIELDS )
     # this is also where you add methods
 
     def __str__(self):
