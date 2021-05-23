@@ -1,7 +1,20 @@
-<h1>Playlist Manager</h1>
+<!DOCTYPE html>
+<html lang = "en">
 
-<form action="{% url 'playlist_manager:index' %}" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Go">
-</form>
+<head>
+    <title>Playlist Manager</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alexander Lee">
+    <meta name="description" content="">
+</head>
+
+<body>
+    <h1>Playlist Manager</h1>
+
+    <form action="{% url 'playlist_manager:index' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Go">
+    </form>
+</body>
+</html>

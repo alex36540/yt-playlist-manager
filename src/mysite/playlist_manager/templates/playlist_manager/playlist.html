@@ -1,7 +1,19 @@
-<h1>{{ playlist.title }}</h1>
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title>{{ playlist.title }}</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Alexander Lee">
+</head>
+<body>
+    <h1>{{ playlist.title }}</h1>
 
-<ol>
-    {% for video in video_list %}
-        <li>{{ video.title }}</li>
-    {% endfor %}
-</ol>
+    <div>
+        <ol>
+            {% for video in video_list %}
+                <li>{{ video.title }}</li>
+            {% endfor %}
+        </ol>
+    </div>
+</body>
+</html>
