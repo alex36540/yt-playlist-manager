@@ -1,7 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
 from .models import Playlist, Video
 from django.urls import reverse
+from .forms import PlaylistForm
 
 import os
 from dotenv import load_dotenv
@@ -13,8 +13,17 @@ api = pyyoutube.Api(api_key=API_KEY)
 
 
 def index(request):
-    context = {}
-    return render(request, 'playlist_manager/index.html', context)
+    if request.method == 'POST':
+        form = PlaylistForm(request.POST)
+
+        if form.is_valid():
+            pl_id = form.cleaned_data['pl_id']
+
+            return redirect('playlist_manager:playlist', playlist_id=pl_id)
+
+    else:
+        context = {'form': PlaylistForm()}
+        return render(request, 'playlist_manager/index.html', context)
 
 
 def playlist(request, playlist_id):
@@ -33,7 +42,7 @@ def playlist(request, playlist_id):
 
         for item in pl_items.items:
             pl.video_set.create(
-                id=item.snippet.resourceId.videoId,
+                video_id=item.snippet.resourceId.videoId,
                 title=item.snippet.title,
                 index=item.snippet.position
             )
