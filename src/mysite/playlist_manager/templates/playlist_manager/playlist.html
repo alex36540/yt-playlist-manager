@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html lang = "en">
+{% load static %}
 <head>
     <title>{{ playlist.title }}</title>
     <meta charset="UTF-8">
     <meta name="author" content="Alexander Lee">
+    <link rel="stylesheet" href="{% static 'playlist_manager/styles/playlist.css' %}">
 </head>
 <body>
-    <h1>{{ playlist.title }}</h1>
+    <h1 class="head">{{ playlist.title }}</h1>
 
-    <div>
-        <ol>
-            {% for video in video_list %}
-                <li>{{ video.title }}</li>
-            {% endfor %}
-        </ol>
+    <div class="flex-container">
+        <div class="flex-child">
+            <ol>
+                {% for video in video_list %}
+                    <li>{{ video.title }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <div class="flex-child">
+            <p>gaaaa</p>
+        </div>
     </div>
 </body>
 </html>
