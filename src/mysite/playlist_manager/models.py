@@ -12,7 +12,7 @@ class Playlist(models.Model):
 
 
 class Video(models.Model):
-    id = models.CharField(max_length=200, primary_key=True)
+    video_id = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     playlist = models.ForeignKey(Playlist, on_delete=models.CASCADE)
     index = models.IntegerField()
